@@ -1,0 +1,67 @@
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 16px clamp(18px, 5vw, 64px);
+  border-bottom: 1px solid #d7dde5;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(12px);
+}
+
+.brand {
+  color: #172033;
+  font-size: 1.35rem;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+nav {
+  display: flex;
+  gap: 10px;
+}
+
+nav a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 38px;
+  padding: 0 12px;
+  border-radius: 6px;
+  color: #526070;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+nav a.active,
+nav a:hover {
+  background: #eaf8f3;
+  color: #0d7c66;
+}
+
+.cart-badge {
+  display: inline-grid;
+  min-width: 22px;
+  height: 22px;
+  place-items: center;
+  border-radius: 999px;
+  background: #e85d42;
+  color: #ffffff;
+  font-size: 0.78rem;
+}
+
+.page-shell {
+  width: min(1120px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 36px 0 56px;
+}
+
+@media (max-width: 520px) {
+  .site-header {
+    align-items: start;
+    flex-direction: column;
+  }
+}

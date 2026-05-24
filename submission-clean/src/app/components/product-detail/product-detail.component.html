@@ -1,0 +1,31 @@
+<button type="button" class="back-button" (click)="goBack()">Back to products</button>
+
+<article class="detail" *ngIf="product; else notFound">
+  <img [src]="product.url" [alt]="product.name">
+
+  <section class="detail-copy">
+    <p class="eyebrow">Product details</p>
+    <h1>{{ product.name }}</h1>
+    <p class="price">{{ product.price | currency }}</p>
+    <p class="description">{{ product.description }}</p>
+
+    <label>
+      Quantity
+      <select [(ngModel)]="quantity" (ngModelChange)="onQuantityChange($event)">
+        <option *ngFor="let amount of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]" [ngValue]="amount">
+          {{ amount }}
+        </option>
+      </select>
+    </label>
+
+    <button type="button" class="primary-button" (click)="addToCart()">Add to cart</button>
+    <p class="notice" *ngIf="message" role="status">{{ message }}</p>
+  </section>
+</article>
+
+<ng-template #notFound>
+  <section class="empty-state">
+    <h1>Product not found</h1>
+    <p>This item is not available in the current catalog.</p>
+  </section>
+</ng-template>

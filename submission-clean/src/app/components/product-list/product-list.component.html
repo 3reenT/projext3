@@ -1,0 +1,17 @@
+<section class="shop-header">
+  <div>
+    <p class="eyebrow">MyStore collection</p>
+    <h1>Products</h1>
+  </div>
+  <p>Choose an item, set a quantity, and add it to your shared shopping cart.</p>
+</section>
+
+<p class="notice" *ngIf="message" role="status">{{ message }}</p>
+
+<section class="product-grid" aria-label="Products">
+  <app-product-item
+    *ngFor="let product of products"
+    [product]="product"
+    (addProduct)="addToCart($event)"
+  ></app-product-item>
+</section>

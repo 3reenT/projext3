@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "name": "Aurora Wireless Headphones",
+    "price": 129.99,
+    "url": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=900&q=80",
+    "description": "Comfortable over-ear headphones with active noise cancellation and rich, balanced sound."
+  },
+  {
+    "id": 2,
+    "name": "Nomad Daypack",
+    "price": 74.5,
+    "url": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=900&q=80",
+    "description": "A durable everyday backpack with padded laptop storage and weather-resistant fabric."
+  },
+  {
+    "id": 3,
+    "name": "Ceramic Pour-Over Set",
+    "price": 48,
+    "url": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=900&q=80",
+    "description": "A compact coffee brewing set for smooth, slow mornings and precise extraction."
+  },
+  {
+    "id": 4,
+    "name": "Luma Desk Lamp",
+    "price": 62.25,
+    "url": "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=900&q=80",
+    "description": "A dimmable LED lamp with a focused glow, clean profile, and adjustable arm."
+  },
+  {
+    "id": 5,
+    "name": "Trail Bottle",
+    "price": 28.75,
+    "url": "https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&w=900&q=80",
+    "description": "Insulated stainless steel bottle that keeps drinks cold or hot through the full day."
+  },
+  {
+    "id": 6,
+    "name": "Canvas Organizer",
+    "price": 35,
+    "url": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80",
+    "description": "A tidy desktop organizer for notebooks, cables, pens, and daily essentials."
+  }
+]

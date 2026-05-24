@@ -1,0 +1,88 @@
+<section class="cart-header">
+  <div>
+    <p class="eyebrow">Checkout</p>
+    <h1>Shopping cart</h1>
+  </div>
+  <p class="total" *ngIf="cartItems.length">Total: {{ total | currency }}</p>
+</section>
+
+<section class="cart-layout" *ngIf="cartItems.length; else emptyCart">
+  <div class="cart-items">
+    <article class="cart-row" *ngFor="let item of cartItems">
+      <img [src]="item.product.url" [alt]="item.product.name">
+      <div>
+        <h2>{{ item.product.name }}</h2>
+        <p>{{ item.product.price | currency }} each</p>
+      </div>
+      <label>
+        Qty
+        <input
+          type="number"
+          min="1"
+          [ngModel]="item.quantity"
+          (ngModelChange)="onQuantityChange(item.product.id, $event)"
+        >
+      </label>
+      <p class="line-total">{{ item.product.price * item.quantity | currency }}</p>
+      <button type="button" class="remove-button" (click)="removeItem(item.product.id)">Remove</button>
+    </article>
+  </div>
+
+  <form class="checkout-form" #checkoutForm="ngForm" (ngSubmit)="submitOrder()">
+    <h2>Customer information</h2>
+
+    <label>
+      Full name
+      <input
+        type="text"
+        name="fullName"
+        required
+        minlength="3"
+        [(ngModel)]="fullName"
+        (ngModelChange)="fullName = $event"
+        #nameInput="ngModel"
+      >
+      <span *ngIf="nameInput.invalid && nameInput.touched">Name must be at least 3 characters.</span>
+    </label>
+
+    <label>
+      Address
+      <input
+        type="text"
+        name="address"
+        required
+        minlength="6"
+        [(ngModel)]="address"
+        (ngModelChange)="address = $event"
+        #addressInput="ngModel"
+      >
+      <span *ngIf="addressInput.invalid && addressInput.touched">Address must be at least 6 characters.</span>
+    </label>
+
+    <label>
+      Credit card
+      <input
+        type="text"
+        name="creditCard"
+        required
+        minlength="16"
+        maxlength="16"
+        inputmode="numeric"
+        pattern="[0-9]{16}"
+        [(ngModel)]="creditCard"
+        (ngModelChange)="creditCard = $event"
+        #cardInput="ngModel"
+      >
+      <span *ngIf="cardInput.invalid && cardInput.touched">Enter a 16 digit card number.</span>
+    </label>
+
+    <button type="submit" [disabled]="checkoutForm.invalid || cartItems.length === 0">Submit order</button>
+  </form>
+</section>
+
+<ng-template #emptyCart>
+  <section class="empty-cart">
+    <h2>Your cart is empty.</h2>
+    <a routerLink="/">Continue shopping</a>
+  </section>
+</ng-template>

@@ -1,0 +1,14 @@
+<header class="site-header">
+  <a routerLink="/" class="brand">MyStore</a>
+  <nav aria-label="Primary navigation">
+    <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Products</a>
+    <a routerLink="/cart" routerLinkActive="active">
+      Cart
+      <span class="cart-badge" *ngIf="cartCount">{{ cartCount }}</span>
+    </a>
+  </nav>
+</header>
+
+<main class="page-shell">
+  <router-outlet></router-outlet>
+</main>

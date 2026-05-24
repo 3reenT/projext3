@@ -1,0 +1,16 @@
+<section class="confirmation" *ngIf="order; else noOrder">
+  <p class="eyebrow">Order complete</p>
+  <h1>Thank you, {{ order.fullName }}.</h1>
+  <p>Your order totaling {{ order.total | currency }} has been received.</p>
+  <p class="muted">A confirmation will be sent to {{ order.address }}.</p>
+  <button type="button" (click)="continueShopping()">Continue shopping</button>
+</section>
+
+<ng-template #noOrder>
+  <section class="confirmation">
+    <p class="eyebrow">No order found</p>
+    <h1>Your cart is ready when you are.</h1>
+    <p>Complete checkout to see an order confirmation here.</p>
+    <button type="button" (click)="continueShopping()">Shop products</button>
+  </section>
+</ng-template>
