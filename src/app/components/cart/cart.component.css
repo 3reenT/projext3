@@ -34,6 +34,16 @@ h1 {
   font-weight: 800;
 }
 
+.notice {
+  margin: 0 0 20px;
+  padding: 12px 14px;
+  border: 1px solid #9bd8c4;
+  border-radius: 6px;
+  background: #eaf8f3;
+  color: #095d4d;
+  font-weight: 700;
+}
+
 .cart-layout {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 360px;

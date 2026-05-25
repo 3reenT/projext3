@@ -6,6 +6,8 @@
   <p class="total" *ngIf="cartItems.length">Total: {{ total | currency }}</p>
 </section>
 
+<p class="notice" *ngIf="message" role="status">{{ message }}</p>
+
 <section class="cart-layout" *ngIf="cartItems.length; else emptyCart">
   <div class="cart-items">
     <article class="cart-row" *ngFor="let item of cartItems">

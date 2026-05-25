@@ -13,6 +13,7 @@ export class CartComponent implements OnInit {
   fullName = '';
   address = '';
   creditCard = '';
+  message = '';
 
   constructor(
     private router: Router,
@@ -34,7 +35,9 @@ export class CartComponent implements OnInit {
   }
 
   removeItem(productId: number): void {
+    const item = this.cartItems.find((cartItem) => cartItem.product.id === productId);
     this.cartService.removeFromCart(productId);
+    this.message = item ? `${item.product.name} removed from your cart.` : 'Item removed from your cart.';
   }
 
   submitOrder(): void {
